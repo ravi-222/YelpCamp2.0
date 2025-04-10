@@ -1,0 +1,14 @@
+# Dependency directories
+node_modules/
+
+# Build output
+dist/
+build/
+out/
+
+# dotenv environment files
+.env
+.env.*.local
+
+# VS Code settings
+.vscode/
