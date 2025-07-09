@@ -12,7 +12,7 @@ const reviewRoutes = require("./routes/reviews");
 const userRoutes = require("./routes/users");
 
 const passport = require("passport");
-const passportLocal = require("passport-local");
+const LocalStrategy = require("passport-local");
 const User = require("./models/user");
 
 mongoose.connect("mongodb://127.0.0.1:27017/yelpcamp");
@@ -50,7 +50,7 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(new passportLocal(User.authenticate()));
+passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
